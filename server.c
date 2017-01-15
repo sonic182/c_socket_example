@@ -81,7 +81,7 @@ int main(int argc, char* argv[]){
     n = read(newsockfd, buffer, 4095);
 
     if (n < 0) error("ERROR reading from socket");
-      sprintf(response_buffer, "I got your message");
+      sprintf(response_buffer, "Your message was:\n%s", buffer);
 
     n = write(newsockfd, response_buffer, strlen(response_buffer));
     close(newsockfd);
